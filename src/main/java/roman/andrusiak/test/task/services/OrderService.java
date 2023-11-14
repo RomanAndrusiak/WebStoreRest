@@ -29,7 +29,7 @@ public class OrderService {
 
     @Scheduled(fixedRate = 60000)
     public void cancelUnpaidOrders() {
-        LocalDateTime cancellationThreshold = LocalDateTime.now().minusMinutes(15);
+        LocalDateTime cancellationThreshold = LocalDateTime.now().minusMinutes(10);
         List<Order> unpaidOrders = orderRepository.findOrdersByStatusAndCreatedAtBefore(OrderStatus.PENDING_PAYMENT, cancellationThreshold);
 
         unpaidOrders.forEach(order -> {

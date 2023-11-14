@@ -21,11 +21,11 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
-public class CustomerController {
+public class ProductController {
     private final ProductService productService;
 
     @Autowired
-    public CustomerController(ProductService productService) {
+    public ProductController(ProductService productService) {
         this.productService = productService;
     }
 
